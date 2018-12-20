@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended:false}))
 
 app.use('/user', user)
 
-
+ 
 
 
 app.listen(3000, function(){
