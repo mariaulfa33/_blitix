@@ -1,21 +1,61 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <%-include('./partials/head.ejs')%>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Document</title>
 </head>
 <body>
-    <h3>add event</h3>
-    <form action="/promotors/create" method="POST">
-        <label>nama acara</label>
-        <input name="acara">
-        <label>kapasitas</label>
-        <input name="capacity">
-        <button type="submit">buat acara</button>
+
+    
+
+    <section class="login-block">
+        <div class="container">
+      <div class="row">
+        <div class="col-md-4 login-sec">
+            <h2 class="text-center">Your Created Events</h2>
+            
+    <form class="login-form" action="/Promotors/dashboard/<%=promotors.id%>" method="POST">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="text-uppercase">Event Name</label>
+                <input type="text" class="form-control"name="acara" type="text">       
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="text-uppercase">Total Seat</label>
+                <input class="form-control" name="capacity" type="text">
+            </div> 
+
+            <div class="form-group">
+                    <label for="exampleInputPassword1" class="text-uppercase">ticket price</label>
+                    <input class="form-control" name="price" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="text-uppercase">Event Date</label>
+                <input class="form-control" name="eventdate" type="date">
+            </div>
+
+           
+
+            <div class="form-check">
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input">
+                <small>Remember Me</small>
+                </label>
+                <button type="submit" class="btn btn-login float-right">Submit</button>
+            </div>
+      
     </form>
+    <section>
+
+    </section>
+
+  
 </body>
 </html>

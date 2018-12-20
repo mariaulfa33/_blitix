@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
   }
 });
   Promotor.associate = function(models) {
-    // associations can be defined here
+    Promotor.hasMany(models.Event)
   };
   return Promotor;
 };
