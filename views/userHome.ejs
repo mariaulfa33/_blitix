@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+<h2>welcome <%=user.userName%></h2>
+<h3><a href="/user/buyticket">Get Ticket</a></h3>
+<div class="row">
+  <% user.Events.forEach(function(event) { %>
+    <div class="column" style="background-color:#aaa;">
+        <h2><%= event.Event_name %></h2>
+        <form action="/user/cancel/<%=event.id%>/<%=event.transaction.id%>" method="POST">
+          <input type="submit" name="id" value="Delete"> 
+        </form>
+      </div>
+  <%})%>
+</body>
+</html>

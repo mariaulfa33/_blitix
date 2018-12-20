@@ -17,6 +17,7 @@ router.post('/register',function(req,res){
             Password : req.body.password,
             Secret : secret
     }
+
     Model.Promotor.create(obj)
     .then(data => {
        res.redirect('/promotors/login')
@@ -26,8 +27,7 @@ router.post('/register',function(req,res){
     })
 })
 
-router.get('/login', 
-function(req,res){
+router.get('/login',function(req,res)
     res.render('promotorslogin.ejs')
 })
 router.post('/login', function(req,res){
@@ -42,8 +42,6 @@ router.post('/login', function(req,res){
         res.redirect(err)
     })
 })
-
-
 
 router.post('/dashboard/:id',function(req,res, next) {
     if(req.session.user){
@@ -73,6 +71,5 @@ router.post('/dashboard/:id',function(req,res, next) {
     })
     
 })
-
 
 module.exports = router

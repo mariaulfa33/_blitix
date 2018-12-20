@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <form action="/user/buyTicket" method="POST">
+        Event:<br>
+        <select name="event">
+          <% events.forEach(function(event){ %>
+            <option value="<%=event.id%>" ><%=event.Event_name%></option>
+          <% }) %>  
+          </select>
+        <br>
+        buy:<br>
+        <input type="submit" value="BUY">
+    </form>
+  
+</body>
+</html>
