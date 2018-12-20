@@ -4,6 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     Event_name: DataTypes.STRING,
     Capacity : { type :DataTypes.INTEGER,
                 allowNull : false },
+
+    eventDate : DataTypes.STRING,
     PromotorId : DataTypes.INTEGER,
     waitingList : DataTypes.INTEGER
   }, {});
@@ -11,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
     Event.hasMany(models.Promotor)
     Event.belongsToMany(models.User, { through: models.transaction })
     Event.hasMany(models.transaction) 
-
   };
 
   Event.getWaitingList = function(eventId) {

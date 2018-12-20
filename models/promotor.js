@@ -33,8 +33,8 @@ module.exports = (sequelize, DataTypes) => {
   }
 });
   Promotor.associate = function(models) {
+    Promotor.hasMany(models.Event)
     Promotor.belongsTo(models.Event)
-
   };
   return Promotor;
 };
