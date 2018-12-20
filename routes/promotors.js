@@ -16,7 +16,7 @@ router.post('/register',function(req,res){
             Password : req.body.password,
             Secret : secret
     }
-   // res.send(obj)
+
     Model.Promotor.create(obj)
     .then(data => {
         //res.send(data)
@@ -26,6 +26,8 @@ router.post('/register',function(req,res){
         res.send(err)
     })
 })
+
+
 
 router.get('/login',function(req,res){
     res.render('promotorslogin.ejs')
@@ -42,17 +44,7 @@ router.post('/login', function(req,res){
     })
 })
 
-router.post('/create',function(req,res) {
-  //  res.send(req.body)
-    let obj = {
-                Event_name : req.body.acara,
-                Capacity :  Number(req.body.capacity)
-    }
-    Model.Event.create(obj)
-    .then(event => {
-        res.send(event)
-    })
-})
+
 
 
 module.exports = router
