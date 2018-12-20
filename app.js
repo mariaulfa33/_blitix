@@ -6,7 +6,7 @@ const promotors = require('./routes/promotors.js')
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}))
 
-
+    
 app.use('/promotors',promotors)
 
 app.listen(port, function(){
