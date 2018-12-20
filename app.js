@@ -1,18 +1,21 @@
-const express = require ('express')
-const user = require('./routes/user')
+
+const express = require('express')
 const app = express()
-// const encrypt = require('./helpers/encrypt')
+const port = 3000
+const promotors = require('./routes/promotors.js')
+const user = require('./routes/user')
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended: false}))
 
-app.set('view engine', 'ejs')
-app.use(express.urlencoded({extended:false}))
-
+    
+app.use('/promotors',promotors)
 
 
 app.use('/user', user)
 
- 
 
-
-app.listen(3000, function(){
-  console.log('PORT 3000 start...')
+app.listen(port, function(){
+    console.log(`listen to ${port}`)
 })
+
+ 
