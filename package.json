@@ -1,0 +1,27 @@
+{
+  "name": "blitix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariaulfa33/_blitix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariaulfa33/_blitix/issues"
+  },
+  "homepage": "https://github.com/mariaulfa33/_blitix#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "nexmo": "^2.4.0",
+    "pg": "^7.7.1",
+    "sequelize": "^4.42.0"
+  }
+}
